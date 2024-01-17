@@ -1,0 +1,224 @@
+zadanie 1
+
+tworzenie nowego elementu div
+
+var nowydiv = document.createElement('div');
+
+teraz dodam atrybut innerhtml do mojego elementu
+nowydiv.innerHTML = 'To jest nowy div';
+
+wybieram body
+var bodyElement = document.body
+
+dodanie nowydiv do body
+
+bodyElement.appendChild(nowydiv);
+
+
+Zadanie 2
+
+
+<h1 id="Naglowek">Tu Naglowkowo</h1>
+
+
+Teraz wybiore  h1 za pomoca id ktore ustawilem
+
+const naglowekElement = document.getElementById('Naglowek');
+
+
+zmienie kolor na czerwony tym sposobem
+
+naglowekElement.style.color = 'red'
+
+Zadanie 3
+
+najpierw ustawie sobie id dla img i src
+
+<img id="mojObrazek" src="stary_obrazek.jpg" alt="Stary obrazek">
+
+wybieram img przez id
+
+const obrazekElement = document.getElementById('mojObrazek');
+
+i ustawiam nowa wartosc atrybutu src
+
+obrazekElement.src = 'nowy_obrazek.jpg';
+
+Zadanie 4
+
+ustawiam id dla paragrafu
+<p id="mojParagraf">Puf.</p>
+
+wybiore <p> za pomoca id
+const paragrafElement = document.getElementById(;mojParagraf');
+
+teraz ukryje element <p>
+
+paragrafElement.style.display = 'none';
+
+Zadanie 5
+
+<div id="mojDiv">Divek</div>
+
+wybieram diva za pomoca id
+
+const divElement = document.getElementById('mojDiv')'
+
+dodaje nowa klsae do elementu div
+
+divElement.classlist.add('nowaKlasa');
+
+zadanie 6
+
+<ul>
+<li class="active" id="aktywnyElement">Aktywa</li>
+
+<li>cos</li>
+
+</ul>
+
+Wybieram element <li> z klasą active za pomocą querySelector
+
+const activeListItem = document.querySelector('.active');
+
+Usuwam klasy "active" z elementu <li>
+
+activeListItem.classList.remove('active');
+
+zadanie 7
+
+Przykładowy element <button> do zmiany tekstu 
+
+<button id="mojPrzycisk">Stary tekst</button>
+
+Pobieranie elementu <button> za pomocą id (w tym przypadku id="mojPrzycisk")
+
+const buttonElement = documnt.getElementById('mojPrzycisk');
+
+Zmiana tekstu elementu <button> na "Przycisk"
+
+buttonElement.textContent = 'Przycisk';
+
+
+Zadanie 8
+
+
+Przykładowy element <input> do ustawienia wartości 
+<input id="mojeInput" type="text" value="Stary tekst">
+
+
+Pobieranie elementu <input> za pomocą querySelector
+
+const inputElement = document.querySelector('input');
+
+Ustawianie wartości elementu <input> na pusty ciąg znaków
+
+inputElement.value = '';
+
+
+zadanie 9
+
+
+Przykładowa lista <ul>, do której dodamy nowy element <li> 
+<ul id="mojaLista">
+    <li>Pierwszy element</li>
+    <li>Drugi element</li>
+</ul>
+
+
+ Tworzenie nowego elementu <li>
+    const newListElement = document.createElement('li');
+
+Pobieranie listy <ul> za pomocą querySelector (w tym przypadku id="mojaLista")
+    const unorderedList = document.querySelector('#mojaLista');
+
+Dodawanie nowego elementu <li> do listy <ul>
+    unorderedList.appendChild(newListElement);
+
+Zadanie 10	
+
+Pobieranie elementu <body>
+const bodyElement = document.body;
+
+Zmiana koloru tła na niebieski
+bodyElement.style.backgroundColor = 'blue';
+
+
+zadanie 12
+
+Pobieranie wszystkich elementów <h1> za pomocą querySelectorAll
+
+const headers = document.querySelectorAll('h1');
+
+Sprawdzenie, czy istnieje drugi element <h1>
+
+if (headers.length > 1) {
+
+Zmiana koloru drugiego elementu <h1> na zielony
+headers[1].style.color = 'green';
+}
+
+zadanie 13
+
+Pobieranie elementu <img> za pomocą querySelector (w tym przypadku id="mojObrazek")
+const image = document.querySelector('#mojObrazek');
+
+Ustawianie wartości atrybutu data-src na nowy obrazek
+image.dataset.src = 'nowy_obrazek.jpg';
+
+Usuwanie atrybutu src
+image.removeAttribute('src');
+
+
+zadanie 14
+
+Pobieranie wszystkich elementów <p> za pomocą querySelectorAll
+const paragraphs = document.querySelectorAll('p');
+
+Ukrywanie co drugiego elementu <p>
+for (let i = 1; i < paragraphs.length; i += 2) {
+paragraphs[i].style.display = 'none';
+}
+
+zadanie 15
+
+Pobieranie wszystkich elementów <li> za pomocą querySelectorAll
+const listItems = document.querySelectorAll('ul li');
+
+Sprawdzenie, czy istnieje trzeci element <li>
+if (listItems.length >= 3) {
+Pobieranie trzeciego elementu <li>
+const thirdListItem = listItems[2];
+
+Dodawanie klasy "selected" do trzeciego elementu <li>
+thirdListItem.classList.add('selected');
+}
+
+Zadanie 16
+<details>
+    <summary>Zadanie 3</summary>
+    <section>
+        <h2>Tekst</h2>
+        <p>Paragraf 1</p>
+        <p>Paragraf 2</p>
+    </section>
+    <form onsubmit="addParagraph(event)">
+        <input type="text" id="newParagraph" placeholder="Wpisz tekst...">
+        <button type="submit">Dodaj paragraf</button>
+    </form>
+</details>
+
+
+
+
+function addParagraph(event) {
+event.preventDefault();
+        
+var text = document.querySelector('#newParagraph').value;
+var newParagraph = document.createElement('p');
+newParagraph.textContent = text;
+        
+document.querySelector('section').appendChild(newParagraph);
+}
+
+W tym kodzie mamy formularz z polem tekstowym (<input>) i przyciskiem (<button>). Po kliknięciu przycisku, wywoływana jest funkcja addParagraph(event), która dodaje nowy paragraf z tekstem z pola tekstowego na końcu sekcji Tekst. Funkcja ta używa document.createElement('p') do utworzenia nowego elementu paragrafu, ustawia jego tekst za pomocą textContent, a następnie dodaje go do sekcji za pomocą appendChild.
